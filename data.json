@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "Logo": "https://i.imgur.com/3q73JWQ.png",
+        "Emri": "Matcha Coffee & Eatery",
+        "S": "40",
+        "Location": "104 Fazli Grajqevci, Prishtinë",
+        "DangerScale": 70,
+        "DangerColor": "#E87E7E"
+    },
+    {
+        "id": 2,
+        "Logo": "https://i.imgur.com/7YlOJwR.png",
+        "Emri": "Meridian Express",
+        "S": "120",
+        "Location": "Mati 1",
+        "DangerScale": 49,
+        "DangerColor": "#DEB16E"
+    },
+    {
+        "id": 3,
+        "Logo": "https://i.imgur.com/76msq7M.jpg",
+        "Emri": "Prince Coffe Shop",
+        "S": "110",
+        "Location": "Sheshi Zahir Pajaziti",
+        "DangerScale": 17,
+        "DangerColor": "#3DE781"
+    }
+]
