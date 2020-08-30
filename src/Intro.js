@@ -16,6 +16,7 @@ class Intro extends React.Component {
             </View>
         )
     }
+    // RENDER >> CONTENT
 }
 
 
@@ -30,8 +31,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     image: {
-        height: 250,
-        width: 250,
+        height: 275,
+        width: 275,
         borderWidth: 0
     }
 })
