@@ -17,7 +17,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import * as Font from "expo-font";
-import Filter from "../components/FilterIcon";
+import Filter from "./../components/FilterIcon";
 import { SimpleLineIcons, AntDesign, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
 import Modal from 'react-native-modal';
