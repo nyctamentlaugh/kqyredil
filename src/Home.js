@@ -22,9 +22,25 @@ import { SimpleLineIcons, AntDesign, MaterialIcons, MaterialCommunityIcons } fro
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
 import Modal from 'react-native-modal';
 
+import firebase from 'firebase';
+const firebaseConfig = {
+  apiKey: "AIzaSyDc3k4HMhMScwHOOA8vR6Bv_YZvxnU-EF0",
+  authDomain: "k-qyr-e-dil.firebaseapp.com",
+  databaseURL: "https://k-qyr-e-dil.firebaseio.com",
+  projectId: "k-qyr-e-dil",
+  storageBucket: "k-qyr-e-dil.appspot.com",
+  messagingSenderId: "16672936100",
+  appId: "1:16672936100:web:fa81e3557af6876d5c5631",
+  measurementId: "G-63ETX0642H"
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
 console.disableYellowBox = true;
 
-class Home extends React.Component {
+export default class Home extends React.Component { 
   constructor(props) {
     super(props);
     this.state = {
@@ -40,134 +56,13 @@ class Home extends React.Component {
       selectedValueofOptionsFiltroSipas: 'Filtrimi sipas rendit alfabetik iu mundëson të shihni bizneset në renditje nga A - Zh.',
       isModalVisible: false,
       selectionToExplain: 'Filtrimi sipas rendit alfabetik iu mundëson të shihni bizneset në renditje nga A - Zh.',
-      dataquery: [{
-        "id": "1",
-        "Logo": "https://i.imgur.com/3q73JWQ.png",
-        "Emri": "Matcha Coffee & Eatery",
-        "S": "40",
-        "Location": "104 Fazli Grajqevci",
-        "DangerScale": 70,
-        "DangerColor": "#E87E7E",
-        "Point": "21.1597268, 42.6646601"
-    },
-    {
-        "id": "2",
-        "Logo": "https://i.imgur.com/7YlOJwR.png",
-        "Emri": "Meridian Express",
-        "S": "120",
-        "Location": "Rruga B",
-        "DangerScale": 49,
-        "DangerColor": "#DEB16E",
-        "Point": "21.1640393, 42.648713"
-    },
-    {
-        "id": "3",
-        "Logo": "https://i.imgur.com/76msq7M.jpg",
-        "Emri": "Prince Coffee Shop",
-        "S": "110",
-        "Location": "Sheshi Zahir Pajaziti",
-        "DangerScale": 17,
-        "DangerColor": "#3DE781",
-        "Point": "21.1539253, 42.6599287"
-    },
-    {
-        "id": "4",
-        "Logo": "https://i.imgur.com/3q73JWQ.png",
-        "Emri": "Casa",
-        "S": "40",
-        "Location": "104 Fazli Grajqevci",
-        "DangerScale": 70,
-        "DangerColor": "#E87E7E",
-        "Point": "21.1597268, 42.6646601"
-    },
-    {
-        "id": "5",
-        "Logo": "https://i.imgur.com/7YlOJwR.png",
-        "Emri": "Albi Market",
-        "S": "120",
-        "Location": "Rruga B",
-        "DangerScale": 49,
-        "DangerColor": "#DEB16E",
-        "Point": "21.1640393, 42.648713"
-    },
-    {
-        "id": "6",
-        "Logo": "https://i.imgur.com/76msq7M.jpg",
-        "Emri": "Journal",
-        "S": "110",
-        "Location": "Sheshi Zahir Pajaziti",
-        "DangerScale": 17,
-        "DangerColor": "#3DE781",
-        "Point": "21.1539253, 42.6599287"
-    }],
       loading: false,
       error: null,
-      Data: [
-        {
-            "id": "1",
-            "Logo": "https://i.imgur.com/3q73JWQ.png",
-            "Emri": "Matcha Coffee & Eatery",
-            "S": "40",
-            "Location": "104 Fazli Grajqevci",
-            "DangerScale": 70,
-            "DangerColor": "#E87E7E",
-            "Point": "21.1597268, 42.6646601"
-        },
-        {
-            "id": "2",
-            "Logo": "https://i.imgur.com/7YlOJwR.png",
-            "Emri": "Meridian Express",
-            "S": "120",
-            "Location": "Rruga B",
-            "DangerScale": 49,
-            "DangerColor": "#DEB16E",
-            "Point": "21.1640393, 42.648713"
-        },
-        {
-            "id": "3",
-            "Logo": "https://i.imgur.com/76msq7M.jpg",
-            "Emri": "Prince Coffee Shop",
-            "S": "110",
-            "Location": "Sheshi Zahir Pajaziti",
-            "DangerScale": 17,
-            "DangerColor": "#3DE781",
-            "Point": "21.1539253, 42.6599287"
-        },
-        {
-            "id": "4",
-            "Logo": "https://i.imgur.com/3q73JWQ.png",
-            "Emri": "Casa",
-            "S": "40",
-            "Location": "104 Fazli Grajqevci",
-            "DangerScale": 70,
-            "DangerColor": "#E87E7E",
-            "Point": "21.1597268, 42.6646601"
-        },
-        {
-            "id": "5",
-            "Logo": "https://i.imgur.com/7YlOJwR.png",
-            "Emri": "Albi Market",
-            "S": "120",
-            "Location": "Rruga B",
-            "DangerScale": 49,
-            "DangerColor": "#DEB16E",
-            "Point": "21.1640393, 42.648713"
-        },
-        {
-            "id": "6",
-            "Logo": "https://i.imgur.com/76msq7M.jpg",
-            "Emri": "Journal",
-            "S": "110",
-            "Location": "Sheshi Zahir Pajaziti",
-            "DangerScale": 17,
-            "DangerColor": "#3DE781",
-            "Point": "21.1539253, 42.6599287"
-        }
-    ]
+    dataquery: [],
+    Data: [] 
     };
   }
 
-  
 
   async componentDidMount() {
     await Font.loadAsync({
@@ -181,8 +76,35 @@ class Home extends React.Component {
       "Poppins-SemiBoldItalic": require("./../assets/fonts/Poppins-SemiBoldItalic.ttf"),
     });
 
-    this.setState({ fontLoaded: true });
+    this.setState({
+      fontLoaded: true
+    })
+    var li = []
+    firebase.database().ref().on('value', (snapshot) => {
+      li = [];
+      this.setState({
+        dataquery: [],
+        Data: []
+      })
+      snapshot.forEach((child) => {
+        li.push({
+          id: child.val().id,
+          Emri: child.val().Emri,
+          DangerColor: child.val().DangerColor,
+          DangerScale: child.val().DangerScale,
+          Location: child.val().Location,
+          Logo: child.val().Logo,
+          Point: child.val().Point,
+          S: child.val().S
+        })
+      })
+      this.setState({
+        dataquery: li,
+        Data: li,
+      })
+    })
   }
+    
 
   renderItem = ({ item }) => {
     return ( 
@@ -208,8 +130,8 @@ class Home extends React.Component {
         </View>
         <TouchableOpacity style={styles.TakeMeThere} onPress={ () => Linking.openURL('https://www.google.com/maps/dir/?api=1&destination=' + item.Emri + ', ' + item.Location) } >
           <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-          <MaterialIcons
-                name="directions"
+          <MaterialCommunityIcons
+                name="directions-fork"
                 color="#2b2f3a"
                 size={hp("3%")}
                 style={{ backgroundColor: "transparent"}}
@@ -314,20 +236,6 @@ class Home extends React.Component {
                 animationOut={"slideOutDown"}
                 >
                   <View style={styles.modalView}>
-                  {/* <LinearGradient
-                    colors={[
-                      "#145f4c",
-                      "rgba(26, 135, 107, 0.5365)",
-                      "rgba(61, 231, 188, 0)",
-                    ]}
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      right: 0,
-                      top: 0,
-                      height: hp("80%"),
-                    }}
-                  /> */}
                     <View style={styles.ModalHeader} >
                     
                       <Text style={styles.ModalTitleText}> Mjetet e filtrimit </Text>
@@ -415,8 +323,6 @@ class Home extends React.Component {
 }
 
 
-export default Home;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -457,12 +363,12 @@ const styles = StyleSheet.create({
   },
   whiteback: {
     position:'absolute',
-    height: hp("72.5%"),
+    height: hp("75"),
     top: hp("17.5%"),
     backgroundColor: "#fff",
     width: "100%",
-    borderTopLeftRadius: 55,
-    borderTopRightRadius: 55,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
     padding: hp("5%")
   },
   Logos: {
@@ -476,8 +382,6 @@ const styles = StyleSheet.create({
     flex: 1,
     display: 'flex',
     flexDirection: 'row',
-    // borderWidth: 1, see the borders of the view component
-    // borderColor: '#999' just for testing
   },
   RetailName: {
     color: "#000",
