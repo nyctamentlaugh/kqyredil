@@ -7,16 +7,18 @@ import {
   } from "react-native-responsive-screen"
 import { LinearGradient } from "expo-linear-gradient"
 
+const config = require('./../config')
+
 import firebase from 'firebase'
 const firebaseConfig = {
-  apiKey: "AIzaSyDc3k4HMhMScwHOOA8vR6Bv_YZvxnU-EF0",
-  authDomain: "k-qyr-e-dil.firebaseapp.com",
-  databaseURL: "https://k-qyr-e-dil.firebaseio.com",
-  projectId: "k-qyr-e-dil",
-  storageBucket: "k-qyr-e-dil.appspot.com",
-  messagingSenderId: "16672936100",
-  appId: "1:16672936100:web:fa81e3557af6876d5c5631",
-  measurementId: "G-63ETX0642H"
+  apiKey: config.firebase.apiKey,
+  authDomain: config.firebase.authDomain,
+  databaseURL: config.firebase.databaseURL,
+  projectId: config.firebase.projectId,
+  storageBucket: config.firebase.storageBucket,
+  messagingSenderId: config.firebase.messagingSenderId,
+  appId: config.firebase.appId,
+  measurementId: config.firebase.measurementId
 };
 
 import AnimationHeader from './../components/AnimationHeader'
