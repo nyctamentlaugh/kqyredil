@@ -69,7 +69,7 @@ const tabs = {
       inactiveColor: 'rgba(207,235,239,0)',
     },
   },
-  Preferencat: { // < Screen name
+  Cilësimet: { // < Screen name
     labelStyle: {
       color: '#1194AA',
     },
@@ -129,7 +129,7 @@ export default class App extends React.Component {
             />
 
             <Tab.Screen 
-              name="Preferencat"
+              name="Cilësimet"
               component={Settings}
             />
 
