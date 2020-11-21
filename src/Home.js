@@ -9,7 +9,8 @@ import {
   TouchableOpacity,
   TextInput,
   Picker,
-  Linking
+  Linking,
+  PlatformColor
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {
@@ -38,7 +39,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-console.disableYellowBox = true;
+// console.disableYellowBox = true;
 
 export default class Home extends React.Component { 
   constructor(props) {
@@ -75,7 +76,7 @@ export default class Home extends React.Component {
       "Poppins-SemiBold": require("./../assets/fonts/Poppins-SemiBold.ttf"),
       "Poppins-SemiBoldItalic": require("./../assets/fonts/Poppins-SemiBoldItalic.ttf"),
     });
-
+    console.log()
     this.setState({
       fontLoaded: true
     })

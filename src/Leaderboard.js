@@ -83,17 +83,10 @@ export default class Leaderboard extends React.Component {
                 TopThreeRetails: TopThreeFin,
                 Winner: TopThreeFin[0]
             }) 
-            // console.log(TopThreeFin[0])
-            // snapshot.forEach((snapshotScore) => {
-            //   var scoreChange = snapshotScore.val()
-            //   let i = 1
-            //   if (scoreChange.DangerScale < 10) {
-            //     firebase.database().ref().child().update({ Score: 5 }).then(() => console.log("Updated"))
-            //   } else {
-            //     firebase.database().ref().update({Hi: "NO"}).then(() => console.log("NOPE"))
-            //   }
-            // })
+            console.log(TopThreeFin[0].DangerScale)
+            
         })
+        
     }
 
     Share = async () => {
