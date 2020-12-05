@@ -8,7 +8,10 @@
         "DangerScale": 70,
         "DangerColor": "#E87E7E",
         "Point": "21.1597268, 42.6646601",
-        "Score": 0
+        "WeeklyScore": 0,
+        "numOfPeople": 0,
+        "DailyScore": 0,
+        "Obstructed": false
     },
     {
         "id": "2",
@@ -19,7 +22,10 @@
         "DangerScale": 49,
         "DangerColor": "#DEB16E",
         "Point": "21.1640393, 42.648713",
-        "Score": 0
+        "WeeklyScore": 0,
+        "numOfPeople": 0,
+        "DailyScore": 0,
+        "Obstructed": false
     },
     {
         "id": "3",
@@ -30,7 +36,10 @@
         "DangerScale": 17,
         "DangerColor": "#3DE781",
         "Point": "21.1539253, 42.6599287",
-        "Score": 0
+        "WeeklyScore": 0,
+        "numOfPeople": 0,
+        "DailyScore": 0,
+        "Obstructed": false
     },
     {
         "id": "4",
@@ -41,7 +50,10 @@
         "DangerScale": 70,
         "DangerColor": "#E87E7E",
         "Point": "21.1597268, 42.6646601",
-        "Score": 0
+        "WeeklyScore": 0,
+        "numOfPeople": 0,
+        "DailyScore": 0,
+        "Obstructed": false
     },
     {
         "id": "5",
@@ -52,7 +64,10 @@
         "DangerScale": 49,
         "DangerColor": "#DEB16E",
         "Point": "21.1640393, 42.648713",
-        "Score": 0
+        "WeeklyScore": 0,
+        "numOfPeople": 0,
+        "DailyScore": 0,
+        "Obstructed": false
     },
     {
         "id": "6",
@@ -63,6 +78,9 @@
         "DangerScale": 17,
         "DangerColor": "#3DE781",
         "Point": "21.1539253, 42.6599287",
-        "Score": 0
+        "WeeklyScore": 0,
+        "numOfPeople": 0,
+        "DailyScore": 0,
+        "Obstructed": false
     }
 ]

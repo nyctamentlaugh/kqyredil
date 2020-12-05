@@ -43,7 +43,7 @@ export default class Leaderboard extends React.Component {
     getTopThree = () => {
         let Alpha = this.state.Retails;
         Alpha.sort((a, b) => {
-            return (a.Score < b.Score ? 1 : -1) 
+            return (a.WeeklyScore < b.WeeklyScore ? 1 : -1) 
         })
         this.setState({
             TopThreeRetails: Alpha.slice(0, 3)
@@ -59,15 +59,17 @@ export default class Leaderboard extends React.Component {
             })
             snapshot.forEach((child) => {
                 ToPush.push({
-                id: child.val().id,
-                Emri: child.val().Emri,
-                DangerColor: child.val().DangerColor,
-                DangerScale: child.val().DangerScale,
-                Location: child.val().Location,
-                Logo: child.val().Logo,
-                Point: child.val().Point,
-                S: child.val().S,
-                Score: child.val().Score
+                  id: child.val().id,
+                  Emri: child.val().Emri,
+                  DangerColor: child.val().DangerColor,
+                  DangerScale: child.val().DangerScale,
+                  Location: child.val().Location,
+                  Logo: child.val().Logo,
+                  Point: child.val().Point,
+                  S: child.val().S,
+                  WeeklyScore: child.val().WeeklyScore,
+                  DailyScore: child.val().DailyScore,
+                  Obstructed: child.val().Obstructed
                 })
             })
             this.setState({
@@ -75,7 +77,7 @@ export default class Leaderboard extends React.Component {
             })
             let Alpha = ToPush;
             Alpha.sort((a, b) => {
-                return (a.Score < b.Score ? 1 : -1) 
+                return (a.WeeklyScore < b.WeeklyScore ? 1 : -1) 
             })
             let TopThreeFin = Alpha.slice(0, 3)
             
@@ -148,7 +150,7 @@ export default class Leaderboard extends React.Component {
             
           </View>
           </View>
-          <Text style={styles.RetailScore}>{ item.Score }</Text>
+          <Text style={styles.RetailScore}>{ item.WeeklyScore }</Text>
           </View>
           
         </TouchableOpacity>

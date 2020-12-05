@@ -96,7 +96,10 @@ export default class Home extends React.Component {
           Location: child.val().Location,
           Logo: child.val().Logo,
           Point: child.val().Point,
-          S: child.val().S
+          S: child.val().S,
+          WeeklyScore: child.val().WeeklyScore,
+          DailyScore: child.val().DailyScore,
+          Obstructed: child.val().Obstructed
         })
       })
       this.setState({
@@ -110,6 +113,7 @@ export default class Home extends React.Component {
   renderItem = ({ item }) => {
     return ( 
       <TouchableOpacity style={styles.RetailViewClickableContainer} key={item.id}>
+
         <View style={styles.RetailsView} >
         <View style={styles.ImageShadow}>
           <Image 
@@ -154,6 +158,7 @@ export default class Home extends React.Component {
         <View style={styles.dangerScaleText}>
             <Text style={styles.DangerText}> Rrezikshmëria e përhapjes në këto momente: { item.DangerScale }% </Text>
         </View>
+        <Text style={styles.ObstructedBooleanText}> {item.Obstructed ? "Të dhënat për biznesin lartë, për momentin nuk janë të sakta për shkak të problemeve teknike fizike në vend!" : ""}</Text>
       </TouchableOpacity>
     )
   }
@@ -538,5 +543,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     color: '#2b2f3a',
     marginTop: hp("1%")
+  },
+  ObstructedBooleanText: {
+    fontFamily: 'Poppins-MediumItalic',
+    padding: 10,
+    fontSize: 9,
+    color: '#C02F1D',
+    justifyContent: 'center',
+    textAlign: 'center'
   }
 });
