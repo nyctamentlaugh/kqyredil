@@ -68,7 +68,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => { this.setState({ IntroShow: false })}, 500); 
+    setTimeout(() => { this.setState({ IntroShow: false })}, 1000); 
   };
 
   render() {

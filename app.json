@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "kqyredil",
-    "slug": "kqyredil",
+    "name": "K'qyr e Dil",
+    "slug": "kqyr-e-dil",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,10 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.kqyredil.kqyredil",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.kqyredil.kqyredil",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/nyctamentlaugh/kqyredil"
   }
 }

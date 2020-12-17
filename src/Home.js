@@ -22,17 +22,19 @@ import Filter from "../components/FilterIcon";
 import { SimpleLineIcons, AntDesign, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
 import Modal from 'react-native-modal';
+const config = require('./../config')
+
 
 import firebase from 'firebase';
 const firebaseConfig = {
-  apiKey: "AIzaSyDc3k4HMhMScwHOOA8vR6Bv_YZvxnU-EF0",
-  authDomain: "k-qyr-e-dil.firebaseapp.com",
-  databaseURL: "https://k-qyr-e-dil.firebaseio.com",
-  projectId: "k-qyr-e-dil",
-  storageBucket: "k-qyr-e-dil.appspot.com",
-  messagingSenderId: "16672936100",
-  appId: "1:16672936100:web:fa81e3557af6876d5c5631",
-  measurementId: "G-63ETX0642H"
+  apiKey: config.firebase.apiKey,
+  authDomain: config.firebase.authDomain,
+  databaseURL: config.firebase.databaseURL,
+  projectId: config.firebase.projectId,
+  storageBucket: config.firebase.storageBucket,
+  messagingSenderId: config.firebase.messagingSenderId,
+  appId: config.firebase.appId,
+  measurementId: config.firebase.measurementId
 };
 
 if (!firebase.apps.length) {
@@ -59,8 +61,8 @@ export default class Home extends React.Component {
       selectionToExplain: 'Filtrimi sipas rendit alfabetik iu mundëson të shihni bizneset në renditje nga A - Zh.',
       loading: false,
       error: null,
-    dataquery: [],
-    Data: [] 
+      dataquery: [],
+      Data: [] 
     };
   }
 
@@ -112,7 +114,8 @@ export default class Home extends React.Component {
 
   renderItem = ({ item }) => {
     return ( 
-      <TouchableOpacity style={styles.RetailViewClickableContainer} key={item.id}>
+      <React.Fragment>
+      <TouchableOpacity style={styles.RetailViewClickableContainer} key={item.id} onPress={ ()=> { console.log("hwhhwh") }}>
 
         <View style={styles.RetailsView} >
         <View style={styles.ImageShadow}>
@@ -146,7 +149,8 @@ export default class Home extends React.Component {
         </TouchableOpacity>
         
         </View>
-          <ProgressBarAnimated
+        
+          {/* <ProgressBarAnimated
             backgroundColor={item.DangerColor}
             borderRadius={5}
             borderColor={'#999'}
@@ -154,12 +158,25 @@ export default class Home extends React.Component {
             width={wp("75%")}
             value={item.DangerScale}
             height={hp('1%')}
-          />
-        <View style={styles.dangerScaleText}>
+          /> */}
+        {/* <View style={styles.dangerScaleText}>
             <Text style={styles.DangerText}> Rrezikshmëria e përhapjes në këto momente: { item.DangerScale }% </Text>
-        </View>
+        </View> */}
         <Text style={styles.ObstructedBooleanText}> {item.Obstructed ? "Të dhënat për biznesin lartë, për momentin nuk janë të sakta për shkak të problemeve teknike fizike në vend!" : ""}</Text>
+        
       </TouchableOpacity>
+      <View
+        style={{
+          height: 0.5,
+          width: "100%",
+          marginBottom: 25,
+          backgroundColor: "#555",
+        }}
+      />
+      <Modal>
+        
+      </Modal>
+      </React.Fragment>
     )
   }
 
