@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Share, Text, TouchableOpacity, StyleSheet, FlatList, Image, Dimensions } from 'react-native'
+import { View, Share, Text, TouchableOpacity, StyleSheet, FlatList, Image, Dimensions, SafeAreaView } from 'react-native'
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons'
 import {
     widthPercentageToDP as wp,
@@ -160,7 +160,7 @@ export default class Leaderboard extends React.Component {
     render() {
         const extractKey = ({ id }) => id
         return( 
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
               <LinearGradient
               colors={[
                 "#145f4c",
@@ -257,7 +257,7 @@ export default class Leaderboard extends React.Component {
                     scrollEnabled={false}
                   ></FlatList>
                 </View>
-            </View>
+            </SafeAreaView>
         )
     }
 }
@@ -284,7 +284,8 @@ const styles = StyleSheet.create({
         width: 40,
         padding: wp("2.5%"),
         borderRadius: 100,
-        marginRight: wp("2%")
+        marginRight: wp("2%"),
+        resizeMode: 'cover'
       },
       RetailsView: {
         flex: 1,

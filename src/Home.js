@@ -150,7 +150,7 @@ export default class Home extends React.Component {
         
         </View>
         
-          {/* <ProgressBarAnimated
+          <ProgressBarAnimated
             backgroundColor={item.DangerColor}
             borderRadius={5}
             borderColor={'#999'}
@@ -158,21 +158,13 @@ export default class Home extends React.Component {
             width={wp("75%")}
             value={item.DangerScale}
             height={hp('1%')}
-          /> */}
-        {/* <View style={styles.dangerScaleText}>
+          />
+        <View style={styles.dangerScaleText}>
             <Text style={styles.DangerText}> Rrezikshmëria e përhapjes në këto momente: { item.DangerScale }% </Text>
-        </View> */}
+        </View>
         <Text style={styles.ObstructedBooleanText}> {item.Obstructed ? "Të dhënat për biznesin lartë, për momentin nuk janë të sakta për shkak të problemeve teknike fizike në vend!" : ""}</Text>
         
       </TouchableOpacity>
-      <View
-        style={{
-          height: 0.5,
-          width: "100%",
-          marginBottom: 25,
-          backgroundColor: "#555",
-        }}
-      />
       <Modal>
         
       </Modal>
@@ -291,9 +283,10 @@ export default class Home extends React.Component {
                       <TouchableOpacity style={styles.FiltroTaniBtn} onPress={() => {
                         
                         if (this.state.selectedValueofOptionsFiltroSipas == 'Filtrimi sipas rendit alfabetik iu mundëson të shihni bizneset në renditje nga A - Zh.') {
+                          console.warn(this.state.dataquery);
                           let Alpha = this.state.dataquery;
                           Alpha.sort((a, b) => {
-                            return (a.Emri > b.Emri ? 1 : -1) 
+                            return (a.Emri > b.Emri ? 1 : -1)
                           }) 
                         } else if (this.state.selectedValueofOptionsFiltroSipas == 'Filtroni sipas turmës (shkallës së rrezikshmërisë në kohë reale) në mënyrë që të shmangni ato.') {
                           let Dang = this.state.dataquery;
@@ -386,7 +379,7 @@ const styles = StyleSheet.create({
   },
   whiteback: {
     position:'absolute',
-    height: hp("75"),
+    height: hp("80%"),
     top: hp("17.5%"),
     backgroundColor: "#fff",
     width: "100%",
@@ -399,6 +392,7 @@ const styles = StyleSheet.create({
     width: wp("20%"),
     padding: wp("5%"),
     borderRadius: 10,
+    resizeMode: 'contain'
   },
   RetailsView: {
     marginBottom: hp("1%"),
@@ -417,7 +411,6 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 1, width: 1 }, 
     shadowOpacity: 1, 
     shadowRadius: 1, 
-    elevation: 2, 
     height: hp("11.5%"),
     width: wp("20%"),
     marginRight: wp("2.5%")

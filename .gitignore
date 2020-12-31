@@ -10,6 +10,7 @@ npm-debug.*
 web-build/
 config.js
 data.json
+.idea
 
 # macOS
 .DS_Store

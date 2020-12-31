@@ -17,11 +17,11 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.kqyredil.kqyredil",
+      "bundleIdentifier": "com.elbionredenica.kqyredil",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.kqyredil.kqyredil",
+      "package": "com.elbionredenica.kqyredil",
       "versionCode": 1
     },
     "web": {
